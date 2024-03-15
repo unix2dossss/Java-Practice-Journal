@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class arrayListCreate {
+public class arrayListCreateQ10 {
 	public static void main(String[] args) {
         ArrayList<Integer> result = createArrayList(10);
         System.out.println(result);
