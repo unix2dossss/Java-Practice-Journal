@@ -11,15 +11,28 @@ import java.util.ArrayList;
 
 class AnimationViewer  {
 	//modify data field currentShapeType and currentPathType
-    private int currentShapeType=Shape.DEFAULT_SHAPETYPE; // the current shape type,
-    private int currentPathType=Shape.DEFAULT_PATHTYPE;  // the current path type
+    private ShapeType currentShapeType=Shape.DEFAULT_SHAPETYPE; // the current shape type,
+    private PathType currentPathType=Shape.DEFAULT_PATHTYPE;  // the current path type
 
     private ArrayList<Shape> shapes = new ArrayList<Shape>(); //create the ArrayList to store shapes
     private Color currentColor=Shape.DEFAULT_COLOR;  // the current fill colour of a shape
     private Color currentBorderColor = Shape.DEFAULT_BORDER_COLOR;
     private int currentPanelWidth=Shape.DEFAULT_PANEL_WIDTH, currentPanelHeight = Shape.DEFAULT_PANEL_HEIGHT, currentWidth=Shape.DEFAULT_WIDTH, currentHeight=Shape.DEFAULT_HEIGHT;
 
-	public AnimationViewer() {}
+	public AnimationViewer() {
+        public ShapeType getCurrentShapeType(){
+            return currentShapeType;
+        }
+        public PathType getCurrentPathType(){
+            return currentPathType;
+        }
+        public void setCurrentShapeType(ShapeType s){
+            currentShapeType = s;
+        }
+        public void setCurrentPathType(PathType p){
+            currentPathType = p;
+        }
+    }
     //complete the get/set methods
 
 	//Complete the createNewshape method
