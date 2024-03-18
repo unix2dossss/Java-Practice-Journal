@@ -6,10 +6,11 @@
  *    ===============================================================================
  */
 import java.awt.*;
+
 abstract class Shape {
-	//modify the default shape type and the default path type
-    public static final int DEFAULT_PATHTYPE = 0;
-    public static final int DEFAULT_SHAPETYPE = 0;
+	//modify the default shape type and the default path type.
+    public static final ShapeType DEFAULT_SHAPETYPE = ShapeType.RECTANGLE;
+    public static final PathType  DEFAULT_PATHTYPE = PathType.BOUNCING;
 
     public static final int DEFAULT_X = 0, DEFAULT_Y = 0, DEFAULT_WIDTH=200, DEFAULT_HEIGHT=100, DEFAULT_PANEL_WIDTH=600, DEFAULT_PANEL_HEIGHT=400;
     public static final Color DEFAULT_COLOR=Color.orange, DEFAULT_BORDER_COLOR=Color.black;
@@ -19,7 +20,7 @@ abstract class Shape {
 
     public Shape() {}
     //modify the constructor
-    public Shape(int x, int y, int w, int h, int pw, int ph, Color c, Color bc, int pt) {
+    public Shape(int x, int y, int w, int h, int pw, int ph, Color c, Color bc, PathType pt) {
         this.x = x;
         this.y = y;
         panelWidth = pw;
