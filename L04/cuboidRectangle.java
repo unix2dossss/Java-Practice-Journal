@@ -2,15 +2,12 @@ import java.awt.Point;
 
 public class cuboidRectangle{
     public static void main(String[] args){
-        MySimpleRectangle r = new MySimpleRectangle();
+        MySimpleCuboid r = new MySimpleCuboid();
         System.out.println(r);
-        System.out.println(r.getTopLeft());
-        MySimpleRectangle r1 = new MySimpleRectangle(10, 20, 30, 40);
+        MySimpleCuboid r1 = new MySimpleCuboid(25);
         System.out.println(r1);
-        System.out.printf("width=%d, height=%d, area=%d\n", r1.getWidth(), r1.getHeight(),r1.getPerimeter());
-        MySimpleRectangle r2 = new MySimpleRectangle(new Point(10, 20));
+        MySimpleCuboid r2 = new MySimpleCuboid(25, 32, 36, 12, 25);
         System.out.println(r2);
-        System.out.printf("width=%d, height=%d, area=%d\n", r1.getWidth(), r1.getHeight(),r1.getPerimeter());
     }
 }
 
@@ -54,5 +51,25 @@ class MySimpleRectangle {
     public String toString(){
         return String.format("%s, area=%d", getClass().getName(), this.getArea());
     }
+}
 
+class MySimpleCuboid{
+    private MySimpleRectangle base;
+    private int length;
+    public MySimpleCuboid(){
+        this(0, 0, 1, 2, 1);
+    }
+    public MySimpleCuboid(int x, int y, int width, int height, int length){
+        base = new MySimpleRectangle(x, y, width, height);
+        this.length = length;
+    }
+    public MySimpleCuboid(int length){
+        this(0, 0, 1, 2, length);
+    }
+    public int getVolume(){
+        return length*base.getArea();
+    }
+    public String toString(){
+        return String.format("%s, volume=%d", getClass().getName(), this.getVolume());
+    }
 }
