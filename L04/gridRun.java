@@ -7,8 +7,8 @@ public class gridRun{
         Grid grid1 = new Grid(1, 1, 10, 10);
         for (Point element:pts)
         System.out.println(grid1.addPoint(element));
-        System.out.println(grid1.getPoint(0));
-        System.out.println( grid1.getPoint(1));
+        System.out.println(grid1);
+        System.out.println(grid1.getSize());
     }
 }
 
@@ -36,5 +36,17 @@ class Grid {
 
     public Point getPoint(int index){
         return points.get(index);
+    }
+
+    public int getSize(){
+        return points.size();
+    }
+
+    public String toString(){
+        StringBuffer out = new StringBuffer();
+        for (int i = 0; i <= points.size()-1; i++){
+            out.append(points.get(i));
+        }
+        return out.toString();
     }
 }
