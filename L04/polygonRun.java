@@ -1,9 +1,9 @@
 public class polygonRun{
     public static void main(String[] args){
-        MyPentagon t1 = new MyPentagon(3);
+        MyHexagon t1 = new MyHexagon(3);
         System.out.println(t1.getNumberOfSides());
         System.out.println(t1.getSideLength());System.out.printf("The area is %.2f\n", t1.getArea());
-        MyPentagon t2 = new MyPentagon(5);
+        MyHexagon t2 = new MyHexagon(5);
         System.out.println(t2.getNumberOfSides());
         System.out.println(t2.getSideLength());System.out.printf("The area is %.2f\n", t2.getArea());
         System.out.println(t1);
@@ -44,6 +44,20 @@ class MyPentagon extends MyNGon{
     }
     public double getArea(){
         return 0.25*Math.sqrt(5*(5+2*Math.sqrt(5)))*Math.pow(this.getSideLength(), 2);
+    }
+
+    public String toString(){
+        return String.format("%s, area=%.2f", super.toString(), this.getArea());
+    }
+}
+
+
+class MyHexagon extends MyNGon{
+    public MyHexagon(int sideLength){
+        super(6, sideLength);
+    }
+    public double getArea(){
+        return ((3*Math.sqrt(3))/2)*Math.pow(this.getSideLength(), 2);
     }
 
     public String toString(){
