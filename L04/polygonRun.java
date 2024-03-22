@@ -1,12 +1,14 @@
 public class polygonRun{
     public static void main(String[] args){
-        MyNGon t1 = new MyNGon(6, 2);
+        MyPentagon t1 = new MyPentagon(3);
         System.out.println(t1.getNumberOfSides());
-        System.out.println(t1.getSideLength());
-        MyNGon t2 = new MyNGon(8, 4);
+        System.out.println(t1.getSideLength());System.out.printf("The area is %.2f\n", t1.getArea());
+        MyPentagon t2 = new MyPentagon(5);
         System.out.println(t2.getNumberOfSides());
-        System.out.println(t2.getSideLength());
-        
+        System.out.println(t2.getSideLength());System.out.printf("The area is %.2f\n", t2.getArea());
+        System.out.println(t1);
+        System.out.println(t2);
+        System.out.println(t1 instanceof MyNGon);
     }
 }
 
@@ -34,4 +36,17 @@ class MyNGon {
         return String.format("%d sides * %d", this.numberOfSides, this.sideLength);
     }
 
+}
+
+class MyPentagon extends MyNGon{
+    public MyPentagon(int sideLength){
+        super(5, sideLength);
+    }
+    public double getArea(){
+        return 0.25*Math.sqrt(5*(5+2*Math.sqrt(5)))*Math.pow(this.getSideLength(), 2);
+    }
+
+    public String toString(){
+        return String.format("%s, area=%.2f", super.toString(), this.getArea());
+    }
 }
