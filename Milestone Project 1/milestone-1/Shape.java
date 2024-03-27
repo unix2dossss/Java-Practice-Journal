@@ -18,7 +18,9 @@ abstract class Shape {
     protected Color color = DEFAULT_COLOR, borderColor =DEFAULT_BORDER_COLOR ;
     protected MovingPath path = new BouncingPath(1, 2);
 
-    public Shape() {}
+    public Shape() {
+        this(DEFAULT_X, DEFAULT_Y, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_PANEL_WIDTH, DEFAULT_PANEL_HEIGHT, DEFAULT_COLOR, DEFAULT_BORDER_COLOR, DEFAULT_PATHTYPE);
+    }
     //modify the constructor
     public Shape(int x, int y, int w, int h, int pw, int ph, Color c, Color bc, PathType pt) {
         this.x = x;
