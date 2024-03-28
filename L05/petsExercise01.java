@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 import javax.net.ssl.HostnameVerifier;
 
-public class test {
+public class petsExercise01 {
     public static void main(String[] args) {
         Cat theCat = new Cat();
         Dog theDog = new Dog();
